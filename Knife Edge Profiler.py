@@ -66,8 +66,13 @@ def P(x, x_half, P_max, P_off, w):
     return P_off + (P_max/2) * erf((x - x_half) / (w / np.sqrt(2)))
 # ---------------
 
+
 # fit data to curve above
-popt, pcov = curve_fit(P, positions, powers, bounds=([3,110,-1000,0],[5,130,1000,5]))
+if zeropos < endpos:
+    popt, pcov = curve_fit(P, positions, powers, bounds=([zeropos,0,-1000,0],[endpos,120,1000,np.abs(endpos-zeropos)]))
+else:
+    popt, pcov = curve_fit(P, positions, powers, bounds=([endpos,0,-1000,0],[zeropos,120,1000,np.abs(endpos-zeropos)]))
+    
 
 positions_fit = np.linspace(positions[0],positions[-1],100)
 
