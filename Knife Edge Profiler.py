@@ -69,9 +69,9 @@ def P(x, x_half, P_max, P_off, w):
 
 # fit data to curve above
 if zeropos < endpos:
-    popt, pcov = curve_fit(P, positions, powers, bounds=([zeropos,0,-1000,0],[endpos,120,1000,np.abs(endpos-zeropos)]))
+    popt, pcov = curve_fit(P, positions, powers, bounds=([zeropos,-200,-1000,0],[endpos,200,1000,np.abs(endpos-zeropos)]))
 else:
-    popt, pcov = curve_fit(P, positions, powers, bounds=([endpos,0,-1000,0],[zeropos,120,1000,np.abs(endpos-zeropos)]))
+    popt, pcov = curve_fit(P, positions, powers, bounds=([endpos,-200,-1000,0],[zeropos,200,1000,np.abs(endpos-zeropos)]))
     
 
 positions_fit = np.linspace(positions[0],positions[-1],100)
