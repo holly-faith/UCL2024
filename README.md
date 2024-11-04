@@ -1,3 +1,4 @@
 "# UCL2024" 
-Contains my little knife edge profiling code and also my fiber modes calculations!
-I also just included all my data too bc it might as well be saved here
+All my code I did while working as a research assistant at UCL!!
+Started off as my little knife edge profile and fitting program, then some bits of data, then a bunch of calculations and benchmarking for feasability and design and stuff!!!
+Cutest and best repository for the cutest and best RA <3
